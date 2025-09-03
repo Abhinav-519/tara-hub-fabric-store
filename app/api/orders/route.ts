@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getOrderStorage } from '../../../lib/order-storage'
-import { withCors } from '../../../lib/cors'
 
 // Get persistent order storage
 const orderStorage = getOrderStorage()
@@ -240,10 +239,10 @@ async function handlePUT(request: NextRequest) {
   }
 }
 
-// Export wrapped handlers with CORS
-export const GET = withCors(handleGET)
-export const POST = withCors(handlePOST) 
-export const PUT = withCors(handlePUT)
+// Export handlers directly (Vercel handles CORS)
+export const GET = handleGET
+export const POST = handlePOST
+export const PUT = handlePUT
 
 // Handle preflight OPTIONS requests
 export async function OPTIONS(request: Request) {
