@@ -197,7 +197,7 @@ export async function POST(request: NextRequest) {
         
         console.log('✅ REAL EMAIL SENT SUCCESSFULLY via Resend!')
         console.log('📧 Sent to:', customerEmail)
-        console.log('Email ID:', data.id)
+        console.log('Email response:', data)
         console.log('Check your inbox (or spam folder) for the order confirmation!')
         emailSent = true
       } catch (emailError: any) {
