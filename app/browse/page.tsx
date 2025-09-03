@@ -254,7 +254,7 @@ function FabricCard({
     // Primary fields
     name: fabric.name || 'Untitled Fabric',
     price: fabric.price || 99.00,
-    image: fabric.swatch_image_url || fabric.images?.[0] || 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400',
+    image: fabric.swatch_image_url || (fabric as any).images?.[0] || 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400',
     inStock: fabric.in_stock ?? true,
     
     // Secondary fields
